@@ -44,7 +44,7 @@ ART_STYLES = {
 }
 
 # Set up the app title and icon
-st.set_page_config(page_title="IMAGE GENERATION NSF 1", page_icon="🎨")
+st.set_page_config(page_title="IMAGE GENERATION NSF 2", page_icon="🎨")
 
 # Initialize Hugging Face Inference client
 def get_client():
@@ -61,7 +61,7 @@ if 'history' not in st.session_state:
     st.session_state.history = []
 
 # App UI
-st.title("❌IMAGE GENERATION NSF 1❌")
+st.title("❌IMAGE GENERATION NSF 2❌")
 st.write("Professional Art Generation with 100+ Style Presets")
 
 # Input parameters
@@ -127,7 +127,7 @@ if st.button("Create Artwork", type="primary"):
             # Generate artwork
             result = client.text_to_image(
                 prompt=full_prompt,
-                model="enhanceaiteam/Flux-uncensored",
+                model="prashanth970/flux-lora-uncensored",
                 negative_prompt=negative_prompt or None,
                 guidance_scale=guidance_scale,
                 height=height,
